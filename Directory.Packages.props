@@ -6,7 +6,6 @@
     <!-- Core Framework Packages -->
     <PackageVersion Include="Microsoft.Extensions.Http" Version="10.0.5" />
     <PackageVersion Include="System.Formats.Cbor" Version="10.0.5" />
-    <PackageVersion Include="Microsoft.Bcl.Memory" Version="10.0.5" />
     <!-- Cryptography -->
     <PackageVersion Include="NSec.Cryptography" Version="25.4.0" />
     <!-- JWT and Identity -->
