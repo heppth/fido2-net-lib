@@ -2,15 +2,15 @@
 <Project>
   <!-- Package Metadata -->
   <PropertyGroup>
-    <VersionPrefix>4.0.0-beta3</VersionPrefix>
+    <VersionPrefix>4.0.0-patched</VersionPrefix>
     <VersionSuffix></VersionSuffix>
     <Description>FIDO2 .NET library (WebAuthn)</Description>
-    <RepositoryUrl>https://github.com/passwordless-lib/fido2-net-lib</RepositoryUrl>
+    <RepositoryUrl>https://github.com/heppth/fido2-net-lib</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <PackageTags>fido2 webauthn</PackageTags>
     <PackageReleaseNotes>Initial release</PackageReleaseNotes>
-    <PackageProjectUrl>https://github.com/passwordless-lib/fido2-net-lib</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/heppth/fido2-net-lib</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
   
@@ -22,7 +22,7 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <!-- 
       Temporary disabling of CS1591 (Missing XML comment for publicly visible type or member) warning
-      Make sure to re-enable it when https://github.com/passwordless-lib/fido2-net-lib/issues/501 is resolved.
+      Make sure to re-enable it when https://github.com/heppth/fido2-net-lib/issues/501 is resolved.
     -->
     <NoWarn>$(NoWarn);CS1591</NoWarn>
   </PropertyGroup>
