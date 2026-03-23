@@ -129,7 +129,7 @@ public class AuthenticatorResponseTests
             AttestationResponse = rawResponse,
             OriginalOptions = originalOptions,
             IsCredentialIdUniqueToUserCallback = callback
-        });
+        }, TestContext.Current.CancellationToken);
     }
 
     [Theory]
@@ -235,7 +235,7 @@ public class AuthenticatorResponseTests
             AttestationResponse = rawResponse,
             OriginalOptions = originalOptions,
             IsCredentialIdUniqueToUserCallback = callback
-        }));
+        }, TestContext.Current.CancellationToken));
         Assert.StartsWith("Fully qualified origin", ex.Message);
     }
 
@@ -452,7 +452,7 @@ public class AuthenticatorResponseTests
             AttestationResponse = rawResponse,
             OriginalOptions = originalOptions,
             IsCredentialIdUniqueToUserCallback = callback
-        }));
+        }, TestContext.Current.CancellationToken));
         Assert.Same(Fido2ErrorMessages.AttestationResponseTypeNotWebAuthnGet, ex.Message);
     }
 
@@ -527,7 +527,7 @@ public class AuthenticatorResponseTests
             AttestationResponse = rawResponse,
             OriginalOptions = originalOptions,
             IsCredentialIdUniqueToUserCallback = callback
-        }));
+        }, TestContext.Current.CancellationToken));
         Assert.Same(Fido2ErrorMessages.AttestationResponseIdMissing, ex.Message);
     }
 
@@ -600,7 +600,7 @@ public class AuthenticatorResponseTests
             AttestationResponse = rawResponse,
             OriginalOptions = originalOptions,
             IsCredentialIdUniqueToUserCallback = callback
-        }));
+        }, TestContext.Current.CancellationToken));
         Assert.Equal("AttestationResponse type must be 'public-key'", ex.Message);
     }
 
@@ -680,7 +680,7 @@ public class AuthenticatorResponseTests
             AttestationResponse = rawResponse,
             OriginalOptions = originalOptions,
             IsCredentialIdUniqueToUserCallback = callback
-        }));
+        }, TestContext.Current.CancellationToken));
         Assert.Equal(Fido2ErrorCode.InvalidRpidHash, ex.Code);
         Assert.Equal(Fido2ErrorMessages.InvalidRpidHash, ex.Message);
     }
@@ -762,7 +762,7 @@ public class AuthenticatorResponseTests
             AttestationResponse = rawResponse,
             OriginalOptions = originalOptions,
             IsCredentialIdUniqueToUserCallback = callback
-        }));
+        }, TestContext.Current.CancellationToken));
 
         Assert.Equal(Fido2ErrorCode.UserPresentFlagNotSet, ex.Code);
         Assert.Equal(Fido2ErrorMessages.UserPresentFlagNotSet, ex.Message);
@@ -845,7 +845,7 @@ public class AuthenticatorResponseTests
             AttestationResponse = rawResponse,
             OriginalOptions = originalOptions,
             IsCredentialIdUniqueToUserCallback = callback
-        }));
+        }, TestContext.Current.CancellationToken));
         Assert.Equal(Fido2ErrorMessages.BackupEligibilityRequirementNotMet, ex.Message);
     }
 
@@ -926,7 +926,7 @@ public class AuthenticatorResponseTests
             AttestationResponse = rawResponse,
             OriginalOptions = originalOptions,
             IsCredentialIdUniqueToUserCallback = callback
-        }));
+        }, TestContext.Current.CancellationToken));
         Assert.Equal(Fido2ErrorMessages.BackupEligibilityRequirementNotMet, ex.Message);
     }
 
@@ -1006,7 +1006,7 @@ public class AuthenticatorResponseTests
             AttestationResponse = rawResponse,
             OriginalOptions = originalOptions,
             IsCredentialIdUniqueToUserCallback = callback
-        }));
+        }, TestContext.Current.CancellationToken));
         Assert.Equal("Attestation flag not set on attestation data", ex.Message);
     }
 
@@ -1087,7 +1087,7 @@ public class AuthenticatorResponseTests
             AttestationResponse = rawResponse,
             OriginalOptions = originalOptions,
             IsCredentialIdUniqueToUserCallback = callback
-        }));
+        }, TestContext.Current.CancellationToken));
         Assert.Equal("Unknown attestation type. Was 'testing'", ex.Message);
         Assert.Equal(Fido2ErrorCode.UnknownAttestationType, ex.Code);
     }
@@ -1168,7 +1168,7 @@ public class AuthenticatorResponseTests
             AttestationResponse = rawResponse,
             OriginalOptions = originalOptions,
             IsCredentialIdUniqueToUserCallback = callback
-        }));
+        }, TestContext.Current.CancellationToken));
         Assert.Equal("CredentialId is not unique to this user", ex.Message);
     }
 
@@ -1248,7 +1248,7 @@ public class AuthenticatorResponseTests
             AttestationResponse = rawResponse,
             OriginalOptions = originalOptions,
             IsCredentialIdUniqueToUserCallback = callback
-        }));
+        }, TestContext.Current.CancellationToken));
         Assert.Equal("User Verified flag not set in authenticator data and user verification was required", ex.Message);
     }
 
@@ -1389,7 +1389,7 @@ public class AuthenticatorResponseTests
             StoredPublicKey = null,
             StoredSignatureCounter = 0,
             IsUserHandleOwnerOfCredentialIdCallback = callback
-        }));
+        }, TestContext.Current.CancellationToken));
         Assert.Equal(Fido2ErrorMessages.AssertionResponseNotPublicKey, ex.Message);
     }
 
@@ -1464,7 +1464,7 @@ public class AuthenticatorResponseTests
             StoredPublicKey = null,
             StoredSignatureCounter = 0,
             IsUserHandleOwnerOfCredentialIdCallback = callback
-        }));
+        }, TestContext.Current.CancellationToken));
         Assert.Equal(Fido2ErrorMessages.AssertionResponseIdMissing, ex.Message);
     }
 
@@ -1540,7 +1540,7 @@ public class AuthenticatorResponseTests
             StoredPublicKey = null,
             StoredSignatureCounter = 0,
             IsUserHandleOwnerOfCredentialIdCallback = callback
-        }));
+        }, TestContext.Current.CancellationToken));
         Assert.Equal(Fido2ErrorMessages.AssertionResponseRawIdMissing, ex.Message);
     }
 
@@ -1616,7 +1616,7 @@ public class AuthenticatorResponseTests
             StoredPublicKey = null,
             StoredSignatureCounter = 0,
             IsUserHandleOwnerOfCredentialIdCallback = callback
-        }));
+        }, TestContext.Current.CancellationToken));
         Assert.Equal(Fido2ErrorMessages.UserHandleIsEmpty, ex.Message);
     }
 
@@ -1692,7 +1692,7 @@ public class AuthenticatorResponseTests
             StoredPublicKey = null,
             StoredSignatureCounter = 0,
             IsUserHandleOwnerOfCredentialIdCallback = callback
-        }));
+        }, TestContext.Current.CancellationToken));
         Assert.Equal(Fido2ErrorMessages.UserHandleNotOwnerOfPublicKey, ex.Message);
     }
 
@@ -1768,7 +1768,7 @@ public class AuthenticatorResponseTests
             StoredPublicKey = null,
             StoredSignatureCounter = 0,
             IsUserHandleOwnerOfCredentialIdCallback = callback
-        }));
+        }, TestContext.Current.CancellationToken));
         Assert.Equal(Fido2ErrorMessages.AssertionResponseTypeNotWebAuthnGet, ex.Message);
     }
 
@@ -1846,7 +1846,7 @@ public class AuthenticatorResponseTests
             StoredPublicKey = null,
             StoredSignatureCounter = 0,
             IsUserHandleOwnerOfCredentialIdCallback = callback
-        }));
+        }, TestContext.Current.CancellationToken));
         Assert.Equal(Fido2ErrorMessages.InvalidRpidHash, ex.Message);
     }
 
@@ -1923,7 +1923,7 @@ public class AuthenticatorResponseTests
             StoredPublicKey = null,
             StoredSignatureCounter = 0,
             IsUserHandleOwnerOfCredentialIdCallback = callback
-        }));
+        }, TestContext.Current.CancellationToken));
         Assert.Equal(Fido2ErrorMessages.InvalidRpidHash, ex.Message);
     }
 
@@ -2000,7 +2000,7 @@ public class AuthenticatorResponseTests
             StoredPublicKey = null,
             StoredSignatureCounter = 0,
             IsUserHandleOwnerOfCredentialIdCallback = callback
-        }));
+        }, TestContext.Current.CancellationToken));
         Assert.Equal(Fido2ErrorMessages.UserPresentFlagNotSet, ex.Message);
     }
 
@@ -2077,7 +2077,7 @@ public class AuthenticatorResponseTests
             StoredPublicKey = null,
             StoredSignatureCounter = 0,
             IsUserHandleOwnerOfCredentialIdCallback = callback
-        }));
+        }, TestContext.Current.CancellationToken));
         Assert.Equal(Fido2ErrorMessages.UserVerificationRequirementNotMet, ex.Message);
     }
 
@@ -2153,7 +2153,7 @@ public class AuthenticatorResponseTests
             StoredPublicKey = null,
             StoredSignatureCounter = 0,
             IsUserHandleOwnerOfCredentialIdCallback = callback
-        }));
+        }, TestContext.Current.CancellationToken));
         Assert.Equal(Fido2ErrorMessages.BackupEligibilityRequirementNotMet, ex.Message);
     }
 
@@ -2229,7 +2229,7 @@ public class AuthenticatorResponseTests
             StoredPublicKey = null,
             StoredSignatureCounter = 0,
             IsUserHandleOwnerOfCredentialIdCallback = callback
-        }));
+        }, TestContext.Current.CancellationToken));
         Assert.Equal(Fido2ErrorMessages.BackupEligibilityRequirementNotMet, ex.Message);
     }
 
@@ -2305,7 +2305,7 @@ public class AuthenticatorResponseTests
             StoredPublicKey = null,
             StoredSignatureCounter = 0,
             IsUserHandleOwnerOfCredentialIdCallback = callback
-        }));
+        }, TestContext.Current.CancellationToken));
         Assert.Equal(Fido2ErrorMessages.BackupStateRequirementNotMet, ex.Message);
     }
 
@@ -2381,7 +2381,7 @@ public class AuthenticatorResponseTests
             StoredPublicKey = null,
             StoredSignatureCounter = 0,
             IsUserHandleOwnerOfCredentialIdCallback = callback
-        }));
+        }, TestContext.Current.CancellationToken));
         Assert.Equal(Fido2ErrorMessages.BackupStateRequirementNotMet, ex.Message);
     }
 
@@ -2457,7 +2457,7 @@ public class AuthenticatorResponseTests
             StoredPublicKey = null,
             StoredSignatureCounter = 0,
             IsUserHandleOwnerOfCredentialIdCallback = callback
-        }));
+        }, TestContext.Current.CancellationToken));
         Assert.Equal(Fido2ErrorMessages.MissingStoredPublicKey, ex.Message);
     }
 
@@ -2534,7 +2534,7 @@ public class AuthenticatorResponseTests
             StoredPublicKey = fido2_net_lib.Test.Fido2Tests.MakeCredentialPublicKey(COSE.KeyType.OKP, COSE.Algorithm.EdDSA, COSE.EllipticCurve.Ed25519, publicKey).GetBytes(),
             StoredSignatureCounter = 0,
             IsUserHandleOwnerOfCredentialIdCallback = callback
-        }));
+        }, TestContext.Current.CancellationToken));
         Assert.Equal(Fido2ErrorMessages.InvalidSignature, ex.Message);
     }
 
@@ -2616,7 +2616,7 @@ public class AuthenticatorResponseTests
             StoredPublicKey = cpk.GetBytes(),
             StoredSignatureCounter = 2,
             IsUserHandleOwnerOfCredentialIdCallback = callback
-        }));
+        }, TestContext.Current.CancellationToken));
         Assert.Equal(Fido2ErrorMessages.SignCountIsLessThanSignatureCounter, ex.Message);
     }
 }

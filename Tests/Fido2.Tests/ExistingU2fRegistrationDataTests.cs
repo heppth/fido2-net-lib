@@ -65,7 +65,7 @@ public class ExistingU2fRegistrationDataTests
             StoredPublicKey = publicKey.Encode(),
             StoredSignatureCounter = 0,
             IsUserHandleOwnerOfCredentialIdCallback = null
-        });
+        }, TestContext.Current.CancellationToken);
 
         Assert.NotEmpty(credential.CredentialId);
     }
